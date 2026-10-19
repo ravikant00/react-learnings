@@ -14,7 +14,7 @@ const App = () => {
         <div className="center">
           <h3>Amazon <span>5days working</span> </h3>
           <h2>Senior UI/UX Developer</h2>
-          <div>
+          <div className='tag'>
             <h4>Part Time</h4>
             <h4>Senior Level</h4>
           </div>
@@ -22,7 +22,7 @@ const App = () => {
 
         <div className="bottom">
           <div>
-            <h2>120$/hr</h2>
+            <h3>120$/hr</h3>
             <p>Mumbai,India</p>
           </div>
           <button>Apply</button>
