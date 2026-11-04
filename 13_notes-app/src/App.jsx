@@ -1,6 +1,10 @@
 import React from 'react'
 
 const App = () => {
+  const formHandler = (e) =>{
+    e.preventDefault()
+    console.log("form submitted")
+  }
   return (
      <div className='h-screen lg:flex bg-black text-white'>
 
