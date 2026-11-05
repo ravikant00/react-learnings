@@ -8,7 +8,11 @@ const App = () => {
   return (
      <div className='h-screen lg:flex bg-black text-white'>
 
-      <form  className='flex gap-4 lg:w-1/2 p-10 flex-col items-start'>
+      <form  
+        onChange = {(e) => {
+          formHandler(e)
+        }}
+        className='flex gap-4 lg:w-1/2 p-10 flex-col items-start'>
 
         <h1 className='text-4xl mb-2 font-bold'>Add Notes</h1>
 
