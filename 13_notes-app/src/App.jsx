@@ -1,34 +1,23 @@
 import React, {useState} from 'react'
 
 const App = () => {
-<<<<<<< HEAD
-  const formHandler = (e) =>{
-    e.preventDefault()
-    console.log("form submitted")
-  }
-  return (
-     <div className='h-screen lg:flex bg-black text-white'>
 
-      <form  
-        onChange = {(e) => {
-          formHandler(e)
-        }}
-        className='flex gap-4 lg:w-1/2 p-10 flex-col items-start'>
+  const [title, setTitle] = useState("");
+  const [desc, setDesc] = useState("");
 
-        <h1 className='text-4xl mb-2 font-bold'>Add Notes</h1>
-=======
+  const [task, setTask] = useState([]);
 
   const formHandler = (e)=>{
     e.preventDefault()
-    console.log(title)
-    console.log(desc)
-    console.log("Form submitted.")
+
+    const copyTask = [...task]
+    setTask(copyTask);
+
+    copyTask.push(title, desc)
+
     setTitle("")
     setDesc("")
-  }
-
-  const [title, setTitle] = useState("")
-  const [desc, setDesc] = useState("")
+  }  
 
   return (
     <div className="h-screen lg:flex bg-black text-white">
@@ -39,7 +28,6 @@ const App = () => {
         className="flex gap-4 lg:w-1/2 p-10 flex-col items-start"
       >
         <h1 className="text-4xl mb-2 font-bold">Add Notes</h1>
->>>>>>> 6ce19db (created onChange events in app.jsx)
 
         {/* PEHLA INPUT FOR HEADING */}
         <input
@@ -71,7 +59,11 @@ const App = () => {
       </form>
       <div className="lg:w-1/2 lg:border-l-2  p-10">
         <h1 className="text-4xl font-bold">Recent Notes</h1>
-        <div className="flex flex-wrap items-start justify-start gap-5 mt-6 h-[90%] overflow-auto"></div>
+        <div className="flex flex-wrap items-start justify-start gap-5 mt-6 h-[90%] overflow-auto">
+          {task.map(function () {
+            
+          })}
+        </div>
       </div>
     </div>
   );
