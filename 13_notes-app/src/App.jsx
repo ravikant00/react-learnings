@@ -61,6 +61,7 @@ const App = () => {
         <h1 className="text-4xl font-bold">Recent Notes</h1>
         <div className="flex flex-wrap items-start justify-start gap-5 mt-6 h-[90%] overflow-auto">
           {task.map(function () {
+            console.log("hello...");
             
           })}
         </div>
