@@ -11,13 +11,18 @@ const App = () => {
     e.preventDefault()
 
     const copyTask = [...task]
-    setTask(copyTask);
 
-    copyTask.push(title, desc)
+    copyTask.push({ title, desc });
+    setTask(copyTask);
 
     setTitle("")
     setDesc("")
   }  
+
+  const deleteNote = ()=>{
+
+  }
+
 
   return (
     <div className="h-screen lg:flex bg-black text-white">
@@ -60,9 +65,15 @@ const App = () => {
       <div className="lg:w-1/2 lg:border-l-2  p-10">
         <h1 className="text-4xl font-bold">Recent Notes</h1>
         <div className="flex flex-wrap items-start justify-start gap-5 mt-6 h-[90%] overflow-auto">
-          {task.map(function () {
-            console.log("hello...");
+          {task.map(function (elem, idx) {
             
+            return <div key={idx} className=" flex justify-between flex-col items-start relative h-52 w-40 bg-cover rounded-xl text-black pt-7 pb-2 px-4 bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdmgvqd2-mLzhxM_LJlAs9KF8aydUCrh8PhabN9JVk2Q&s=10')]">
+              <div>
+                <h3 className='leading-tight text-lg font-bold'>{elem.title}</h3>
+                <p className='mt-1 leading-tight text-xs font-semibold text-gray-600'>{elem.desc}</p>
+              </div>
+              
+            </div>
           })}
         </div>
       </div>
