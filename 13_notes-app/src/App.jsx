@@ -19,7 +19,13 @@ const App = () => {
     setDesc("")
   }  
 
-  const deleteNote = ()=>{
+  const deleteNote = (idx)=>{
+    const copyTask = [...task]
+
+    copyTask.splice(idx, 1)
+
+    setTask(copyTask)
+    
 
   }
 
@@ -73,6 +79,9 @@ const App = () => {
                 <p className='mt-1 leading-tight text-xs font-semibold text-gray-600'>{elem.desc}</p>
               </div>
               
+              <button onClick={(idx) => {
+                deleteNote(idx)
+              }} className='w-full cursor-pointer active:scale-95 bg-red-500 py-1 text-xs rounded font-bold text-white'>Delete</button>
             </div>
           })}
         </div>
