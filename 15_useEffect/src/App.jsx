@@ -1,6 +1,16 @@
 import React from 'react'
 
 const App = () => {
+  const [a, setA] = useState(0);
+  const [b, setB] = useState(0);
+
+  function aChanging() {
+    console.log("A ki value change ho gyi");
+  }
+
+  function bChanging() {
+    console.log("B ki value change ho gyi");
+  }
   return (
     <div>
       <h1>A is {a}</h1>
