@@ -1,4 +1,6 @@
 import React from 'react'
+import { useEffect } from "react";
+import { useState } from "react";
 
 const App = () => {
   const [a, setA] = useState(0);
@@ -11,6 +13,21 @@ const App = () => {
   function bChanging() {
     console.log("B ki value change ho gyi");
   }
+
+  useEffect(
+    function () {
+      aChanging();
+    },
+    [a],
+  );
+
+  useEffect(
+    function () {
+      bChanging();
+    },
+    [b],
+  );
+
   return (
     <div>
       <h1>A is {a}</h1>
